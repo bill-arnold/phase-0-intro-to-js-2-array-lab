@@ -1,0 +1,48 @@
+const cats = ["Milo","Ortis","Garfield"];
+beforeEach(function () {
+    cats.length = 0;
+  
+    cats.push("Milo", "Otis", "Garfield");
+  });
+
+
+function destructivelyAppendCat(name) {
+  cats.push(name);
+}
+
+function destructivelyPrependCat(name) {
+  cats.unshift(name);
+}
+
+function destructivelyRemoveLastCat() {
+  cats.pop();
+}
+
+function destructivelyRemoveFirstCat() {
+  cats.shift();
+}
+
+function appendCat(name) {
+  // Create a new array by concatenating cats and the new cat
+  const newCats = [...cats, name];
+  return newCats;
+}
+
+function prependCat(name) {
+  // Create a new array by adding the new cat to the beginning
+  const newCats = [name, ...cats];
+  return newCats;
+}
+
+function removeLastCat() {
+  // Create a new array by removing the last cat
+  const newCats = cats.slice(0, -1);
+  return newCats;
+}
+
+function removeFirstCat() {
+  // Create a new array by removing the first cat
+  const newCats = cats.slice(1);
+  return newCats;
+}
+
